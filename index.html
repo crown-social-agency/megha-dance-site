@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vijayanthi Kalakshetra | Bharatanatyam Dance Studio</title>
+    <meta name="description" content="Immerse yourself in the sacred art of Bharatanatyam at Vijayanthi Kalakshetra. Learn from Megha Sarathy, a disciple of Smt. Uma Rao in the revered Kalakshetra tradition. Classes for children and adults in Sunnyvale, CA." />
+    <meta name="author" content="Megha Sarathy" />
+    <meta name="keywords" content="Bharatanatyam, Kalakshetra, Indian classical dance, Tamil Nadu, Megha Sarathy, Sunnyvale, Bay Area, sacred dance, temple dance, cultural heritage" />
+    
+    <meta property="og:title" content="Vijayanthi Kalakshetra | Bharatanatyam Dance Studio" />
+    <meta property="og:description" content="Immerse yourself in the sacred art of Bharatanatyam at Vijayanthi Kalakshetra. Learn from Megha Sarathy, a disciple of Smt. Uma Rao in the revered Kalakshetra tradition." />
+    <meta property="og:type" content="website" />
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color System - Muted Brown to Red Palette */
+            --primary: 15 75% 45%;
+            --primary-glow: 25 80% 50%;
+            --secondary: 218 11% 65%;
+            --accent: 35 85% 55%;
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --muted: 20 40% 98%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --border: 214.3 31.8% 91.4%;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+            --gradient-subtle: linear-gradient(180deg, hsl(var(--muted)), hsl(var(--background)));
+            --gradient-hero: linear-gradient(to right, hsla(var(--primary), 0.8), hsla(var(--primary), 0.6), transparent);
+
+            /* Enhanced Brown to Red-Orange Background Transition */
+            --scroll-bg-brown: 30 35% 75%;
+            --scroll-bg-red: 12 60% 68%;
+            --scroll-bg-orange: 20 70% 72%;
+            --text-color-light: 0 0% 98%;
+            --text-color-dark: 222.2 84% 4.9%;
+
+            /* Shadows */
+            --shadow-elegant: 0 10px 30px -10px hsla(var(--primary), 0.3);
+            --shadow-soft: 0 4px 20px -4px hsla(var(--primary), 0.15);
+            --shadow-glow: 0 0 40px hsla(var(--primary-glow), 0.4);
+
+            /* Animations */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: hsl(var(--text-color-dark));
+            background: hsl(var(--scroll-bg-brown));
+            transition: background-color 1.2s ease-out, color 0.8s ease-out;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--muted));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--accent)));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--primary)));
+        }
+
+        /* Main Container */
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            min-height: 44px;
+        }
+
+        .btn-elegant {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .btn-elegant:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-hero {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-hero:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100% + 20vh);
+            object-fit: cover;
+            object-position: top;
+            transform: translateY(var(--parallax, 0px));
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title-accent {
+            display: block;
+            background: linear-gradient(45deg, hsl(var(--primary-glow)), hsl(var(--accent)));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        /* Full-bleed Image Sections */
+        .fullbleed-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .fullbleed-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100% + 20vh);
+            object-fit: cover;
+            object-position: top;
+            transform: translateY(var(--parallax, 0px));
+            will-change: transform;
+        }
+
+        .section-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            color: white;
+        }
+
+        .section-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+        }
+
+        /* About Section with grid */
+        .about-grid {
+            display: grid;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .text-overlay-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        /* Classes Section */
+        .classes-grid {
+            display: grid;
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .classes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .class-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition-smooth);
+        }
+
+        .class-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .class-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: hsl(var(--primary-glow));
+        }
+
+        .class-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .class-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        /* Footer Reveal Effect */
+        .footer-reveal-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .footer-reveal-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100% + 20vh);
+            object-fit: cover;
+            object-position: top;
+            transform: translateY(var(--parallax, 0px));
+            will-change: transform;
+        }
+
+        .footer-reveal-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+            color: white;
+            padding: 80px 24px 40px;
+            z-index: 0;
+        }
+
+        .footer-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100% + 20vh);
+            object-fit: cover;
+            object-position: top;
+            transform: translateY(var(--parallax, 0px));
+            will-change: transform;
+            z-index: -1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-nav a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 600px;
+            margin: 48px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: hsl(var(--primary-glow));
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .scroll-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .scroll-border {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .scroll-dot {
+            width: 4px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            margin-top: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40%, 43% {
+                transform: translateY(-8px);
+            }
+            70% {
+                transform: translateY(-4px);
+            }
+            90% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 16px 24px;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            transform: translateY(-100%);
+        }
+
+        .nav-menu.visible {
+            transform: translateY(0);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* CTA Buttons */
+        .section-cta {
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <div class="nav-content">
+            <a href="#" class="nav-logo" onclick="scrollToSection('hero')">Vijayanthi Kalakshetra</a>
+            <ul class="nav-links">
+                <li><a href="#heritage" onclick="scrollToSection('heritage')">Heritage</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#classes" onclick="scrollToSection('classes')">Classes</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Hero Section - Keep as is -->
+        <section class="hero">
+            <div class="hero-background">
+                <img src="public/lovable-uploads/a2894d4b-e61c-42ea-87b3-642bb1f3bf61.png" alt="Sacred Bharatanatyam Performance in Traditional Temple Setting" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Vijayanthi
+                    <span class="hero-title-accent">Kalakshetra</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Where ancient sacred dance traditions meet the modern soul
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-elegant" onclick="scrollToSection('about')">Discover Our Heritage</button>
+                    <button class="btn btn-hero" onclick="scrollToSection('contact')">Begin Your Journey</button>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-border">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bharatanatyam Heritage Section - Full bleed -->
+        <section id="heritage" class="fullbleed-section">
+            <img src="public/lovable-uploads/0365cb81-b83e-4be6-adca-6e5ae8e20cba.png" alt="Beautiful Bharatanatyam solo performance" class="fullbleed-image">
+            <div class="section-overlay"></div>
+            
+            <div class="section-content scroll-hidden" data-scroll>
+                <h2>The Sacred Art of Bharatanatyam</h2>
+                <p>
+                    Bharatanatyam is one of India's most ancient and revered classical dance forms, with origins rooted in the sacred temple traditions of Tamil Nadu. Originally performed by devadasis (women dedicated to temple service), the dance was a form of ritual worship and spiritual storytelling, expressing devotion through movement, music, and gesture.
+                </p>
+                <p>
+                    The word "Bharatanatyam" itself reflects its composite nature: <em>bhava</em> (emotion), <em>raga</em> (melody), <em>tala</em> (rhythm), and <em>natya</em> (drama or dance). Each performance is a multidimensional offering, blending intricate footwork, expressive facial gestures, and symbolic hand movements (mudras) to convey stories from Hindu mythology and epics.
+                </p>
+                <div class="section-cta">
+                    <button class="btn btn-elegant" onclick="scrollToSection('contact')">Start Your Journey</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section - Full bleed with Megha -->
+        <section id="about" class="fullbleed-section">
+            <img src="public/lovable-uploads/a2894d4b-e61c-42ea-87b3-642bb1f3bf61.png" alt="Megha Sarathy in traditional Bharatanatyam costume" class="fullbleed-image">
+            <div class="section-overlay"></div>
+            
+            <div class="section-content">
+                <div class="about-grid">
+                    <div>
+                        <h2>About Megha Sarathy</h2>
+                        <div class="text-overlay-box scroll-hidden" data-scroll>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 16px; color: hsl(var(--primary-glow));">A Lifelong Journey</h3>
+                            <p>
+                                My journey with Bharatanatyam began when I was just four years old, learning under Guru Aruna in the Kalakshetra style at Mysore, Karnataka. For over 25 years, I have had the privilege of training with Guru Uma Rao, one of the earliest disciples of the legendary Rukmini Devi Arundale.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="text-overlay-box scroll-hidden" data-scroll>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 16px; color: hsl(var(--primary-glow));">Teaching Philosophy</h3>
+                            <p>
+                                Age has nothing to do with art—only passion matters. I don't teach solely for stage shows or performances. I teach because it brings me joy, and I learn alongside my students. Most importantly, dance should be fun!
+                            </p>
+                        </div>
+                        
+                        <div class="text-overlay-box scroll-hidden" data-scroll>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 16px; color: hsl(var(--primary-glow));">Our Philosophy</h3>
+                            <p>
+                                At Vijayanthi Kalakshetra, we believe classical dance is more than an art form—it is a path to self-discovery, discipline, and deep cultural connection. We cultivate not only strong technique but also profound respect for the spiritual foundations of this dance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <button class="btn btn-elegant" onclick="scrollToSection('contact')">Join Our Classes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classes Section - Full bleed -->
+        <section id="classes" class="fullbleed-section">
+            <img src="public/lovable-uploads/611cb463-8e8e-4389-994d-89adf9d8c477.png" alt="Bharatanatyam duo performance showing synchronized movement" class="fullbleed-image">
+            <div class="section-overlay"></div>
+            
+            <div class="section-content">
+                <h2>Our Classes</h2>
+                <p>Structured learning paths honoring traditional Kalakshetra technique</p>
+                
+                <div class="classes-grid">
+                    <div class="class-card scroll-hidden" data-scroll>
+                        <h3 class="class-title">Beginner Classes</h3>
+                        <p class="class-subtitle">Ages 4 & up | Saturdays</p>
+                        <p class="class-description">
+                            Perfect for children beginning their dance journey. Beginner students focus on building strength and rhythm, learning elementary dances that emphasize feeling, expression, and musical timing.
+                        </p>
+                        <p><strong>Schedule:</strong> Saturdays in Sunnyvale, CA</p>
+                        <p><strong>New Session:</strong> October 2nd, 2025</p>
+                    </div>
+                    
+                    <div class="class-card scroll-hidden" data-scroll>
+                        <h3 class="class-title">Intermediate Classes</h3>
+                        <p class="class-subtitle">Adults | Sundays</p>
+                        <p class="class-description">
+                            This class welcomes adults who have previously learned Bharatanatyam and wish to brush up on fundamentals, get in shape, and experience dancing again.
+                        </p>
+                        <p><strong>Schedule:</strong> Sundays in Sunnyvale, CA</p>
+                        <p><strong>Perfect for:</strong> Previous students or those wanting a fresh start</p>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <button class="btn btn-elegant" onclick="scrollToSection('contact')">Enroll Today</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Full bleed -->
+        <section id="contact" class="fullbleed-section">
+            <img src="public/lovable-uploads/e9ce0f63-a23d-4d31-b792-566507132e55.png" alt="Megha Sarathy singing and performing" class="fullbleed-image">
+            <div class="section-overlay"></div>
+            
+            <div class="section-content">
+                <h2>Begin Your Journey</h2>
+                <p>Ready to discover the sacred art of Bharatanatyam? Contact us to learn more about our classes and start your dance journey with us.</p>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest" class="form-label">Interest</label>
+                            <select id="interest" name="interest" class="form-input" required>
+                                <option value="">Select your interest</option>
+                                <option value="beginner-children">Beginner Classes (Children)</option>
+                                <option value="intermediate-adults">Intermediate Classes (Adults)</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your dance background or any questions you have..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-elegant" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Reveal Spacer -->
+        <div class="footer-reveal-container">
+            <img src="public/lovable-uploads/611cb463-8e8e-4389-994d-89adf9d8c477.png" alt="Bharatanatyam duo performance" class="footer-reveal-bg">
+            <div class="footer-reveal-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer (revealed through scroll) -->
+    <footer class="footer">
+        <img src="public/lovable-uploads/a2894d4b-e61c-42ea-87b3-642bb1f3bf61.png" alt="Sacred dance background" class="footer-background">
+        <div class="footer-content">
+            <h3>Vijayanthi Kalakshetra</h3>
+            <p style="margin-bottom: 32px; color: rgba(255, 255, 255, 0.8);">Where ancient sacred dance traditions meet the modern soul</p>
+            
+            <nav class="footer-nav">
+                <a href="#heritage" onclick="scrollToSection('heritage')">Heritage</a>
+                <a href="#about" onclick="scrollToSection('about')">About Megha</a>
+                <a href="#classes" onclick="scrollToSection('classes')">Classes</a>
+                <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+                <a href="#" onclick="scrollToSection('hero')">Back to Top</a>
+            </nav>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vijayanthi Kalakshetra. All rights reserved.</p>
+                <p>Teaching the sacred art of Bharatanatyam in Sunnyvale, CA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = sectionId === 'hero' ? 
+                document.querySelector('.hero') : 
+                document.getElementById(sectionId);
+            
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            document.querySelectorAll('[data-scroll]').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+
+        // Dynamic background color based on scroll
+        function updateBackgroundOnScroll() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            const scrollProgress = scrollPosition / (documentHeight - windowHeight);
+            
+            let backgroundColor;
+            if (scrollProgress < 0.33) {
+                const progress = scrollProgress / 0.33;
+                backgroundColor = `hsl(${30 - progress * 10}, ${35 + progress * 15}%, ${75 - progress * 5}%)`;
+            } else if (scrollProgress < 0.66) {
+                const progress = (scrollProgress - 0.33) / 0.33;
+                backgroundColor = `hsl(${20 - progress * 8}, ${50 + progress * 10}%, ${70 - progress * 2}%)`;
+            } else {
+                const progress = (scrollProgress - 0.66) / 0.34;
+                backgroundColor = `hsl(${12 + progress * 8}, ${60 + progress * 10}%, ${68 + progress * 4}%)`;
+            }
+            
+            document.body.style.backgroundColor = backgroundColor;
+        }
+
+        // Form submission
+        function handleFormSubmission() {
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const interest = formData.get('interest');
+                const message = formData.get('message');
+                
+                const subject = `Bharatanatyam Class Inquiry from ${name}`;
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AInterest: ${interest}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                
+                window.location.href = `mailto:info@vijayanthikalakshetra.com?subject=${subject}&body=${body}`;
+            });
+        }
+
+        // Parallax with per-section speeds using CSS variable
+        function initParallaxEffect() {
+            const parallaxElements = [
+                { selector: '.hero-image', speed: 0.15 },
+                { selector: '.fullbleed-image', speed: 0.1 },
+                { selector: '.footer-background', speed: 0.12 },
+                { selector: '.footer-reveal-bg', speed: 0.08 }
+            ];
+
+            const onScroll = () => {
+                const scrolled = window.pageYOffset;
+
+                parallaxElements.forEach(({ selector, speed }) => {
+                    document.querySelectorAll(selector).forEach((element) => {
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.bottom >= 0 && rect.top <= window.innerHeight + 200;
+                        if (isVisible) {
+                            const parallax = -scrolled * speed;
+                            element.style.setProperty('--parallax', `${parallax}px`);
+                        }
+                    });
+                });
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            // Run once to set initial position
+            onScroll();
+        }
+
+        // Navigation visibility on scroll
+        function updateNavOnScroll() {
+            const nav = document.querySelector('.nav-menu');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
+            }
+        }
+
+        // Initialize all effects
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+            handleFormSubmission();
+            initParallaxEffect();
+            
+            // Add scroll listener for background changes and nav
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateBackgroundOnScroll();
+                        updateNavOnScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // Initialize background and nav
+            updateBackgroundOnScroll();
+            updateNavOnScroll();
+        });
+    </script>
+</body>
+</html>
